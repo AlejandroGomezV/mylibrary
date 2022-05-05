@@ -8,7 +8,9 @@ class Menu extends React.Component {
     super(props);
 
     this.state = { newItemPanel: false };
+
     this.add = this.add.bind(this);
+    this.onCancel = this.onCancel.bind(this);
   }
 
   add() {
@@ -16,8 +18,8 @@ class Menu extends React.Component {
     console.log("add book");
   }
 
-  onCancel(){
-    this.state = { newItemPanel: false };
+  onCancel(e) {
+    this.setState({ newItemPanel: false });
   }
 
   render() {

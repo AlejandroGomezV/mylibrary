@@ -1,11 +1,22 @@
 import React from "react";
 
-function Search(props) {
-  return (
-    <div>
-      <input type="text" />
-    </div>
-  );
+class Search extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  onChangeEvent = (e) => {
+    const query = e.target.value.toString().toLocaleLowerCase();
+    this.props.onsearch(query);
+  };
+
+  render() {
+    return (
+      <div>
+        <input type="text" onChange={this.onChangeEvent} />
+      </div>
+    );
+  }
 }
 
 export default Search;

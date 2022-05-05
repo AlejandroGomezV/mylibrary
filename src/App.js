@@ -23,10 +23,18 @@ class App extends React.Component {
     };
   }
 
+  onAdd = (item) => {
+    let temp = [...this.state.books];
+    const id = temp[temp.length - 1].id++;
+    item["id"] = id;
+    temp.push(item);
+    this.setState({ books: [...temp] });
+  };
+
   render() {
     return (
       <div className="app">
-        <Menu title="My Library" />
+        <Menu title="My Library" onadd={this.onAdd} />
         <List items={this.state.books} />
       </div>
     );

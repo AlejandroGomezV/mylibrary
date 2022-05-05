@@ -36,7 +36,11 @@ class Menu extends React.Component {
             </button>
           </div>
         </div>
-        {this.state.newItemPanel ? <PanelAdd onCancel={this.onCancel} /> : ""}
+        {this.state.newItemPanel ? (
+          <PanelAdd onCancel={this.onCancel} onadd={this.props.onadd} />
+        ) : (
+          ""
+        )}
       </div>
     );
   }

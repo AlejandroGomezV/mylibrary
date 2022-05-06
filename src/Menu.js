@@ -15,7 +15,6 @@ class Menu extends React.Component {
 
   add() {
     this.setState({ newItemPanel: true });
-    console.log("add book");
   }
 
   onCancel(e) {

@@ -16,7 +16,7 @@ class PanelAdd extends React.Component {
   onChangeImage = (e) => {
     this.setState({ image: e.target.value });
   };
-  onchangeRating = (e) => {
+  onChangeRating = (e) => {
     const rating = parseInt(e.target.value);
     this.setState({ rating: rating });
   };
@@ -27,6 +27,7 @@ class PanelAdd extends React.Component {
     const image = this.state.image;
     const rating = this.state.rating;
 
+    console.log("add " + rating);
     this.props.onadd({ title: title, image: image, rating: rating });
     this.props.onCancel();
   };
